@@ -1,0 +1,26 @@
+<h1>Simsim chat</h1>
+
+<%if @blog != nil%>
+    <p>질문: <%=@blog.question%></p>
+    <p>답변: <%=@blog.answer%></p>
+<%else%>
+    <p>배운적이없어요</p>
+<%end%>
+
+<form action="/" method="get">
+    
+    <input type="text" name="message" placeholder="채팅을 입력하세요...">
+    <input type="submit" value="전송">
+    
+</form
+
+<br><br>
+
+<form action="/chats/teach" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="text" name="question" placeholder="질문">
+    <input type="text" name="answer" placeholder="답변">
+    <input type="submit" value="전송">
+    
+    
+</form>
